@@ -1,15 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
 
+:root {
+  --left-bg-color: rgba(219, 116, 185, 0.4);
+  --right-bg-color: rgba(221, 215, 183, 0.6);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: "Pattaya", sans-serif;
-
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+h1 {
+  font-size: 7rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .container {
@@ -33,9 +47,25 @@ body {
   background-size: cover;
 }
 
+.split.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
 .split.right {
   right: 0;
   background: url("img/muffinscharisse-kenion-eE98ziMrJyg-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.split.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
 }
